@@ -1,0 +1,386 @@
+:root{
+    --bgcolor:#ffe6f2;
+    --purple:#cc33ff;
+    --blue:#003366;
+    --white:#f4f7ff;
+    --gray:#d8dce4;
+    --lightgray:#8e9095;
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+}
+
+/* Стилі для футеру */
+footer {
+    width: 100%; /* Ширина футера - вся доступна ширина */
+    height: 200px; /* Висота футера */
+    background-color: #ec8ded; /* Колір фону футера */
+    display: flex; /* Використання flexbox для організації вмісту */
+    flex-direction: column; /* Напрямок вмісту в стовпчик */
+    align-items: center; /* Вирівнювання елементів по горизонталі по центру */
+    justify-content: center; /* Вирівнювання елементів по вертикалі по центру */
+    font-size: large; /* Розмір шрифту для тексту в футері */
+}
+
+/*стилі для навігації зверху*/
+nav {
+    position: fixed; /* Елемент фіксується на місці, відносно вікна браузера */
+    top: 0; /* Відстань від верхнього краю сторінки */
+    left: 0; /* Відстань від лівого краю сторінки */
+    width: 100%; /* Ширина навігаційної панелі - вся ширина вікна */
+    background-color: #333; /* Колір фону навігаційної панелі */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для створення ефекту плавності */
+    z-index: 50; /* Порядок зіставлення елементів у відображенні - зверху */
+    display: flex; /* Використання flexbox для вирівнювання елементів */
+    justify-content: start; /* Вирівнювання елементів зліва до права */
+    align-items: center; /* Вирівнювання елементів по вертикалі по центру */
+    padding: 15px 20px; /* Відступи всередині навігаційної панелі */
+}
+/*стилі для посилань верхньої панелі навігації*/
+nav a{
+    margin-left: 100px; /* Відступ зліва для кожного посилання у навігаційному меню */
+    font-size: large; /* Розмір шрифту - великий */
+    color: var(--purple); /* Колір тексту - використовується змінна --purple */
+    padding: 15px 20px; /* Внутрішній відступ для тексту у посиланнях */
+    text-decoration: none; /* Відключення стандартного оформлення посилань */
+}
+/*стилы при наведенні на елемент із панелі навігації*/
+nav a:hover {
+    background-color: #ffc6f7;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* стиль для повзунка */
+::-webkit-scrollbar-thumb {
+    background-color: #ea63e5;
+    border-radius: 10px;
+}
+
+/* Style for скролу */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+html{
+    scroll-behavior:smooth
+}
+body{
+    background: var(--bgcolor);
+    margin: 0;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+.resume-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    min-height: 600px;
+    background-color: #ffbddd;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20vh;
+    height: 70vh;
+    width: 80vw;
+    padding: 30px 100px;
+    justify-content: space-around;
+}
+/*стиль для фото на головному екрані*/
+.info img {
+    height: 20px;
+    object-fit: contain;
+}
+
+.info .info-container {   
+    background-color: #f757a2;
+    padding: 20px;
+    padding-top: 50px;
+    border-radius: 10px;
+    min-width: 400px;
+    font-weight: 600;
+}
+
+.work-experience-container {
+    display: flex;
+    min-height: 800px;
+    margin-top: 30px;
+    flex-direction: column;
+    background-color: #fd91c5;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 80vw;
+    padding: 30px 100px;
+}
+
+.work-experience-container .lr-box {
+    padding: 20px;
+    background-color: #f6b4fa;
+    border-radius: 20px;
+}
+
+.skills-container {
+    height: 100vh;
+    width: 80vw;
+    align-items: stretch;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: #fc7ad1;
+    height: 50vh;
+    padding: 30px 100px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+/*навігація додаткова*/
+.menu-navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.menu-navigation a {
+    color: var(--gray);
+    cursor: pointer;
+    font-size: x-large;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.menu-navigation a:hover {
+    background-color: #3d5cab;
+}
+
+.left-section{
+    z-index: 100;
+    position: fixed;
+    background: var(--blue);
+    width: 250px;
+    height: 100vh;
+    top: 0;
+    left: -400px;
+    opacity: 0;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+}
+
+.left-section .cross {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 100;
+    background-color: black;
+    padding: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.burger-icon {
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 12px;
+    position: fixed;
+    background: var(--purple);
+    padding: 10px;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.profile{
+    overflow: hidden;
+    position: relative;
+}
+
+.blue-box{
+    width: 257px;
+    height: 407px;
+    background: var(--purple);
+    margin-left: -100px;
+    transform:rotateZ(48deg);
+    margin-top: -178px;
+}
+.profile-img{
+    object-fit: cover;
+    position: absolute;
+    z-index: 9;
+    width: 120px;
+    height: 120px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    border:3px solid var(--gray);
+}
+.profile-info {
+    position: relative;
+    width: 30%;
+}
+
+.profile-info  img {
+    width: 120px;
+    height: 120px;
+    border: 3px solid var(--purple);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info  p {
+    font-size: large;
+    font-weight: 600;
+}
+.name{
+    color: var(--gray);
+    text-align: center;
+    margin-top: -34px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.name span{
+    color: var(--purple);
+}
+.n-p{
+    width: 180px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 7px;
+    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
+    color: var(--gray);
+    margin-top: 11px;
+    text-transform: uppercase;
+}
+.heading{
+    width: 180px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2px;
+    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
+    color: var(--gray);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+/*стилі для контейнеру з основною інформацією*/
+.p1{
+    color: var(--gray);
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 14px;
+    height: 100px;
+}
+.p1 span{
+   font-size: 15px; 
+}
+.span1 img{
+    background: white;
+    width: 30px;
+    padding: 6px;
+    border-radius: 16px;
+    float: left;
+    margin-right: 10px;
+}
+.right-section{
+    padding: 40px 30px;
+    background: var(--white);
+    float: left;
+    height: 1000px;
+}
+.right-section img{
+    background: var(--blue);
+    width: 36px;
+    padding: 7px;
+    border-radius: 17px;
+    float: left;
+    display: inline-block;
+    margin-top: -6px;
+}
+.p2{
+    margin: 0 auto;
+    padding: 2px;
+    border-bottom: 1px solid var(--lightgray);
+    border-top: 1px solid var(--lightgray);
+    color: var(--blue);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-left: 50px;
+    line-height: 25px;
+}
+.p3{
+    margin-top: 20px;
+    color: var(--bgcolor);
+    font-weight: 600;
+    text-align: justify;
+    font-size: 18px;
+    word-spacing: -4px;
+}
+
+.lr-box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.p4{
+    font-size: 14px;
+    font-weight: 600;
+}
+.p5{
+    font-size: 12px;
+    color: var(--lightgray)
+}
+/*стилі для елементів з id progress*/
+#progress{
+    background: #333;
+    border-radius: 13px;
+    height: 25px;
+    width: 100%;
+    position: relative;
+}
+
+#progress_after{
+    position: absolute;
+    background: var(--purple);
+    width: 0%;
+    height: 25px;
+    top: 0px;
+    border-radius: 9px;
+    transition: width 2s ease-in-out;
+}
+
+.p6{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.h-img{
+    margin-top: 25px;
+    width: 45px;
+    margin-right: 45px;
+}
+
+.footer-link {
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    font-size: 18px;
+    text-decoration: none;
+}
